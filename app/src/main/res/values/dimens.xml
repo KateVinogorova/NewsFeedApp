@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_value">16dp</dimen>
+    <dimen name="min_height_value">52dp</dimen>
+    <dimen name="paddind_dev_line">8dp</dimen>
+</resources>
