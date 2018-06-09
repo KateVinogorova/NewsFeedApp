@@ -1,75 +1,77 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="@dimen/min_height_value"
-    android:paddingLeft="@dimen/common_padding_value"
-    android:paddingRight="@dimen/common_padding_value"
-    android:paddingTop="@dimen/common_padding_value">
+    android:minHeight="@dimen/min_height_value">
 
-    <LinearLayout
-        android:id="@+id/list_item"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/article_title"
+        style="@style/title_style"
+        android:layout_width="@dimen/zero_value"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/common_padding_value">
+        android:layout_marginEnd="@dimen/common_padding_16"
+        android:layout_marginStart="@dimen/common_padding_16"
+        android:layout_marginTop="@dimen/common_padding_16"
+        android:gravity="bottom"
+        android:maxLines="2"
+        app:layout_constraintEnd_toStartOf="@id/article_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title of the article" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:paddingRight="@dimen/common_padding_value">
+    <TextView
+        android:id="@+id/article_author"
+        android:layout_width="@dimen/zero_value"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_paddind_8"
+        android:layout_marginLeft="@dimen/common_padding_16"
+        android:layout_marginStart="@dimen/common_padding_16"
+        android:layout_marginTop="@dimen/common_paddind_8"
+        android:gravity="top"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/article_title"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Author Name" />
 
-            <TextView
-                android:id="@+id/article_title"
-                style="@style/title_style"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:maxLines="2"
-                tools:text="Title of the article" />
+    <TextView
+        android:id="@+id/article_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_padding_16"
+        android:layout_marginStart="@dimen/common_padding_16"
+        android:layout_marginTop="@dimen/common_padding_16"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintRight_toLeftOf="@+id/article_title"
+        app:layout_constraintStart_toEndOf="@id/article_title"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cities" />
 
-            <TextView
-                android:id="@+id/article_author"
-                style="@style/author_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:text="Author" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/article_section"
-                style="@style/secondary_text_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:gravity="center"
-                android:maxLines="1"
-                tools:text="Cities" />
-
-            <TextView
-                android:id="@+id/article_date"
-                style="@style/secondary_text_style"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="top"
-                android:gravity="center"
-                tools:text="May 3, 2018" />
-
-        </LinearLayout>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/article_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/article_section"
+        app:layout_constraintTop_toBottomOf="@+id/article_section"
+        tools:text="23 May, 18" />
 
     <View
-        android:id="@+id/dev_line"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_alignBottom="@id/list_item"
-        android:background="@color/colorAccent" />
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dev_line_hight"
+        android:layout_marginEnd="@dimen/common_padding_16"
+        android:layout_marginStart="@dimen/common_padding_16"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/article_date" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

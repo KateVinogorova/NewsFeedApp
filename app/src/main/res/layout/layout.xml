@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal">
+
+
+    <TextView
+        android:id="@+id/date_choose_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Choose period" />
+
+    <TextView
+        android:id="@+id/date_from_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/date_choose_text_view"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/settings_date_from_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/date_from_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_choose_text_view" />
+
+    <EditText
+        android:id="@+id/date_from_edit_text"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/date_choose_text_view"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/date_from_text_view"
+        android:layout_toRightOf="@id/date_from_text_view"
+        android:ems="10"
+        android:hint="@string/settings_date_edit_text_view_hint"
+        android:inputType="date"
+        android:maxLength="10"
+        app:layout_constraintStart_toEndOf="@+id/date_from_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/date_choose_text_view" />
+
+    <TextView
+        android:id="@+id/date_to_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_choose_text_view"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/date_from_edit_text"
+        android:layout_toRightOf="@id/date_from_edit_text"
+        android:gravity="end"
+        android:text="@string/settings_date_to_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/date_to_edit_text"
+        app:layout_constraintStart_toEndOf="@+id/date_from_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/date_choose_text_view" />
+
+    <EditText
+        android:id="@+id/date_to_edit_text"
+        android:layout_width="110dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/date_choose_text_view"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_toEndOf="@id/date_to_text_view"
+        android:layout_toRightOf="@id/date_to_text_view"
+        android:ems="10"
+        android:hint="@string/settings_date_edit_text_view_hint"
+        android:inputType="date"
+        android:maxLength="10"
+        app:layout_constraintBottom_toBottomOf="@+id/date_from_edit_text"
+        app:layout_constraintStart_toEndOf="@+id/date_to_text_view"
+        app:layout_constraintTop_toTopOf="@+id/date_from_edit_text"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>

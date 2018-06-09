@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_section_labels">
+        <item>@string/settings_section_label_all</item>
+        <item>@string/settings_section_label_art</item>
+        <item>@string/settings_section_label_business</item>
+        <item>@string/settings_section_label_culture</item>
+        <item>@string/settings_section_label_education</item>
+        <item>@string/settings_section_label_film</item>
+        <item>@string/settings_section_label_law</item>
+        <item>@string/settings_section_label_politics</item>
+        <item>@string/settings_section_label_science</item>
+        <item>@string/settings_section_label_sport</item>
+        <item>@string/settings_section_label_world_news</item>
+    </string-array>
+
+    <string-array name="settings_section_values">
+        <item>@string/settings_section_value_all</item>
+        <item>@string/settings_section_value_art</item>
+        <item>@string/settings_section_value_business</item>
+        <item>@string/settings_section_value_culture</item>
+        <item>@string/settings_section_value_education</item>
+        <item>@string/settings_section_value_film</item>
+        <item>@string/settings_section_value_law</item>
+        <item>@string/settings_section_value_politics</item>
+        <item>@string/settings_section_value_science</item>
+        <item>@string/settings_section_value_sport</item>
+        <item>@string/settings_section_value_world_news</item>
+    </string-array>
+</resources>

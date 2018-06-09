@@ -3,4 +3,53 @@
 
     <string name="no_connection">No internet connection.</string>
     <string name="no_news">No articles found.</string>
+
+    <!-- Strings for SettinsActivity -->
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_menu_title">Newsfeed Settings</string>
+
+    <!-- Strings for Section Preference -->
+    <string name="settings_section_label">Section</string>
+    <string name="settings_section_key" translatable="false">settings</string>
+    <string name="settings_sectioin_default" translatable="false">@string/settings_section_value_all</string>
+
+    <!-- Strings for Section settings labels -->
+    <string name="settings_section_label_all">All</string>
+    <string name="settings_section_label_art">Art &amp; design</string>
+    <string name="settings_section_label_business">Business</string>
+    <string name="settings_section_label_culture">Culture</string>
+    <string name="settings_section_label_education">Education</string>
+    <string name="settings_section_label_film">Film</string>
+    <string name="settings_section_label_law">Law</string>
+    <string name="settings_section_label_politics">Politics</string>
+    <string name="settings_section_label_science">Science</string>
+    <string name="settings_section_label_sport">Sport</string>
+    <string name="settings_section_label_world_news">World News</string>
+
+    <!-- Strings for Section settings values  -->
+    <string name="settings_section_value_all" translatable="false">all</string>
+    <string name="settings_section_value_art" translatable="false">artanddesign</string>
+    <string name="settings_section_value_business" translatable="false">business</string>
+    <string name="settings_section_value_culture" translatable="false">culture</string>
+    <string name="settings_section_value_education" translatable="false">education</string>
+    <string name="settings_section_value_film" translatable="false">film</string>
+    <string name="settings_section_value_law" translatable="false">law</string>
+    <string name="settings_section_value_politics" translatable="false">politics</string>
+    <string name="settings_section_value_science" translatable="false">science</string>
+    <string name="settings_section_value_sport" translatable="false">sport</string>
+    <string name="settings_section_value_world_news" translatable="false">world</string>
+
+    <!-- Strings for Period settings values  -->
+    <string name="settings_date_period_label">Date Period</string>
+    <string name="settings_date_period_key" translatable="false">date</string>
+    <string name="settings_date_period_switch_off_state">Off</string>
+    <string name="settings_date_period_switch_on_state">On</string>
+    <string name="settings_choose_date_period_key" translatable="false">choose_period</string>
+    <string name="settings_date_edit_text_view_hint">yyyy-mm-dd</string>
+
+    <string name="settings_date_from_text_view">From</string>
+    <string name="settings_date_from_text_view_key">from_date</string>
+    <string name="settings_date_to_text_view">To</string>
+    <string name="settings_date_to_text_view_key">to_date</string>
+
 </resources>

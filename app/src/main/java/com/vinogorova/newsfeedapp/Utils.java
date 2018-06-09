@@ -23,6 +23,18 @@ public class Utils {
 
     private static final String LOG_TAG = "Utils";
 
+    private static final int READ_TIMEOUT = 10000;
+    private static final int CONNECT_TIMEOUT = 15000;
+
+    //Keys for extracting data from JSON
+    private static final String KEY_TITLE = "webTitle";
+    private static final String KEY_PUBLICATION_DATE = "webPublicationDate";
+    private static final String KEY_SECTION_NAME = "sectionName";
+    private static final String KEY_URL = "webUrl";
+    private static final String KEY_REFERENCES = "references";
+    private static final String KEY_ID = "id";
+
+
     /**
      * Handle all stages of receiving List of articles from JSON
      * @param requestUrl
@@ -82,8 +94,8 @@ public class Utils {
         try {
             urlConnection = (HttpURLConnection) urlRequest.openConnection();
             urlConnection.setRequestMethod("GET");
-            urlConnection.setConnectTimeout(15000);
-            urlConnection.setReadTimeout(10000);
+            urlConnection.setConnectTimeout(CONNECT_TIMEOUT);
+            urlConnection.setReadTimeout(READ_TIMEOUT);
             urlConnection.connect();
 
             inputStream = urlConnection.getInputStream();
@@ -132,7 +144,7 @@ public class Utils {
     private static List<Article> extractArticles (String jsonString){
 
         if (TextUtils.isEmpty(jsonString)){
-            Log.e(LOG_TAG, "JSON string is emoty");
+            Log.e(LOG_TAG, "JSON string is empty");
             return null;
         }
 
@@ -144,15 +156,15 @@ public class Utils {
             JSONArray array = responseObject.getJSONArray("results");
             for (int i = 0; i < array.length(); i++){
                 JSONObject currentObject = array.getJSONObject(i);
-                String title = currentObject.getString("webTitle");
-                String date = currentObject.getString("webPublicationDate").substring(0, 10);
-                String section = currentObject.getString("sectionName");
-                String url = currentObject.getString("webUrl");
-                JSONArray references = currentObject.getJSONArray("references");
+                String title = currentObject.getString(KEY_TITLE);
+                String date = currentObject.getString(KEY_PUBLICATION_DATE).substring(0, 10);
+                String section = currentObject.getString(KEY_SECTION_NAME);
+                String url = currentObject.getString(KEY_URL);
+                JSONArray references = currentObject.getJSONArray(KEY_REFERENCES);
                 String author = null;
                 if (references.length() > 0){
-                    JSONObject authorObject = currentObject.getJSONArray("references").getJSONObject(0);
-                    String[] authorInfo = authorObject.getString("id").split("/");
+                    JSONObject authorObject = references.getJSONObject(0);
+                    String[] authorInfo = authorObject.getString(KEY_ID).split("/");
                     author = authorInfo[1];
                     Log.e(LOG_TAG, "Author name " + author);
                 }
